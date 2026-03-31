@@ -75,12 +75,6 @@ make clean
 make fclean
 make re
 ```
-
-Build notes:
-- The project Makefile links the Linux MiniLibX with X11: `-lXext -lX11 -lm -lz`.
-- A build was attempted in this environment on March 28, 2026, and stopped on `fatal error: 'X11/Xlib.h' file not found`.
-- In practice, this means the project should be compiled on a Linux setup with the required X11 development headers installed.
-
 ---
 
 ## 🚀 Usage
@@ -148,9 +142,6 @@ This project follows the constraints that are visible in the repository itself:
 - includes explicit cleanup paths for textures, images, map data, window, and display resources
 - stays within the scope of parsing a map file and rendering a simple textured 3D scene
 
-Additional note:
-- I cannot confirm the exact official allowlist of authorized functions from the subject because that document is not present in this repository.
-
 ---
 
 ## 🧪 Testing
@@ -178,7 +169,6 @@ valgrind --leak-check=full --show-leak-kinds=all ./cub3D maps/map/basique.cub
 
 Testing notes:
 - The repository includes several invalid maps in `cub3d/maps/map/`, such as missing colors, missing paths, invalid map structure, and missing player spawn cases.
-- I could not confirm runtime behavior in this environment because compilation stopped on the missing `X11/Xlib.h` dependency.
 
 ---
 
